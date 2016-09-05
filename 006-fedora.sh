@@ -18,7 +18,10 @@ sed -i "s|tomcat.home=/usr/local/fedora/tomcat|tomcat.home=$CATALINA_HOME|g" ~/i
 
 cd ~/islandora-setup
 
-wget http://downloads.sourceforge.net/fedora-commons/fcrepo-installer-$FEDORA_VERSION.jar
+if [ ! -f fcrepo-installer-$FEDORA_VERSION.jar ]; then
+    echo "Downloading fcrepo-installer"
+    wget http://downloads.sourceforge.net/fedora-commons/fcrepo-installer-$FEDORA_VERSION.jar
+fi
 
 java -jar fcrepo-installer-$FEDORA_VERSION.jar install.properties
 
