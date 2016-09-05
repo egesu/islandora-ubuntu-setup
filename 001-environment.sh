@@ -21,7 +21,7 @@ FEDORA_USER="fedora"                   # User that tomcat runs as
 FEDORA_HOME="/usr/local/fedora"        # Fedora home dir
 CATALINA_HOME="$FEDORA_HOME/tomcat"    # Tomcat location
 # NOTE adjust memory so that it is no larger than half of total system memory. Depending on stack deployment this can be adjusted further. Don’t recommend running stack on system with less than 4GB of ram
-JAVA_OPTS="-Xms512m -Xmx512m -XX:+CMSClassUnloadingEnabled -  Djavax.net.ssl.trustStore=/usr/local/fedora/server/truststore -Djavax.net.ssl.trustStorePassword=tomcat -Dsolr.solr.home=/usr/local/fedora/solr -Dkakadu.home=/opt/adore-djatoka/bin/Linux-x86-64 -Djava.library.path=/opt/adore-djatoka/lib/Linux-x86-64 -DLD_LIBRARY_PATH=/opt/adore-djatoka/lib/Linux-x86-64"
+JAVA_OPTS="-Xms512m -Xmx512m -XX:+CMSClassUnloadingEnabled -Djavax.net.ssl.trustStore=/usr/local/fedora/server/truststore -Djavax.net.ssl.trustStorePassword=tomcat -Dsolr.solr.home=/usr/local/fedora/solr -Dkakadu.home=/opt/adore-djatoka/bin/Linux-x86-64 -Djava.library.path=/opt/adore-djatoka/lib/Linux-x86-64 -DLD_LIBRARY_PATH=/opt/adore-djatoka/lib/Linux-x86-64"
 JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # Moved this down below java install please change to match java version
 TOMCAT_BASE="http://localhost:8080"
