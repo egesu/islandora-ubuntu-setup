@@ -27,7 +27,7 @@ fi
 # x264
 cd ~/islandora-setup/ffmpeg-source
 
-if [ "X264_VERSION" != "x264 0.148.x" ]; then
+if [ "$X264_VERSION" != "x264 0.148.x" ]; then
     if [ ! -d "x264" ]; then
         git clone --depth 1 git://git.videolan.org/x264.git
     fi
