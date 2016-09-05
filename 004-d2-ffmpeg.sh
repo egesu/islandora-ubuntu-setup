@@ -7,15 +7,21 @@ fi
 cd ~/islandora-setup/ffmpeg-source
 
 # yasm
-if [ ! -d "yasm-1.2.0" ]; then
-    wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
-    tar xzvf yasm-1.2.0.tar.gz && rm -rf yasm-1.2.0.tar.gz
-fi
+YASM_VERSION="$(yasm --version | sed -n 1p)"
 
-cd yasm-1.2.0
-./configure
-make
-checkinstall --pkgname=yasm --pkgversion="1.2.0" --backup=no --deldoc=yes --fstrans=no --default
+if [ "$YASM_VERSION" != "yasm 1.2.0" ]; then
+    if [ ! -d "yasm-1.2.0" ]; then
+        wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
+        tar xzvf yasm-1.2.0.tar.gz && rm -rf yasm-1.2.0.tar.gz
+    fi
+
+    cd yasm-1.2.0
+    ./configure
+    make
+    checkinstall --pkgname=yasm --pkgversion="1.2.0" --backup=no --deldoc=yes --fstrans=no --default
+else
+    echo "yasm is already installed"
+fi
 
 # x264
 cd ~/islandora-setup/ffmpeg-source
