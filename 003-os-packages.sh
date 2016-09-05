@@ -4,6 +4,7 @@ apt-get -y install python-software-properties && add-apt-repository -y ppa:webup
 
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 
 apt-get -y install \
     oracle-java8-installer \
