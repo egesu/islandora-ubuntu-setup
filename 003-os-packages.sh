@@ -2,6 +2,9 @@
 
 apt-get -y install python-software-properties && add-apt-repository -y ppa:webupd8team/java && apt-get -y update
 
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+
 apt-get -y install \
     oracle-java8-installer \
     libjpeg-dev \
