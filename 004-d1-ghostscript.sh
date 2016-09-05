@@ -11,6 +11,7 @@ fi
 cd ghostscript-9.05
 ./configure
 make && make install
-should return result
+
+# should return result
 gs --version
 cd ..
