@@ -76,5 +76,5 @@ apt-get -y install \
     tesseract-ocr-deu \
     tesseract-ocr-jpn \
     tesseract-ocr-rus \
-    tesseract-ocr-tur \
+    tesseract-ocr-tur
     /
