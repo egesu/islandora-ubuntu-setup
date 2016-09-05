@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 
 MYSQL=`which mysql`
 $MYSQL -uroot -p$DB_ROOT_PASSWORD -e "$SQL"
