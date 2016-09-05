@@ -1,5 +1,8 @@
 #!/bin/sh
 
+YASM_VERSION="$(yasm --version | sed -n 1p)"
+X264_VERSION="$(x264 --version | sed -n 1p)"
+
 # ffmpeg
 if [ ! -d ffmpeg-source ]; then
     mkdir ~/islandora-setup/ffmpeg-source
@@ -7,8 +10,6 @@ fi
 cd ~/islandora-setup/ffmpeg-source
 
 # yasm
-YASM_VERSION="$(yasm --version | sed -n 1p)"
-
 if [ "$YASM_VERSION" != "yasm 1.2.0" ]; then
     if [ ! -d "yasm-1.2.0" ]; then
         wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
@@ -25,18 +26,23 @@ fi
 
 # x264
 cd ~/islandora-setup/ffmpeg-source
-if [ ! -d "x264" ]; then
-    git clone --depth 1 git://git.videolan.org/x264.git
+
+if [ "X264_VERSION" != "x264 0.148.x" ]; then
+    if [ ! -d "x264" ]; then
+        git clone --depth 1 git://git.videolan.org/x264.git
+    fi
+
+    cd x264
+    ./configure --enable-static --enable-shared
+    make
+    checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes  --fstrans=no --default
+    ldconfig
+else
+    echo "x264 is already installed"
 fi
 
-cd x264
-./configure --enable-static --enable-shared
-make
-checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes  --fstrans=no --default
-ldconfig
-cd ~/islandora-setup/ffmpeg-source
-
 # aac
+cd ~/islandora-setup/ffmpeg-source
 if [ ! -d "fdk-aac" ]; then
     git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
 fi
