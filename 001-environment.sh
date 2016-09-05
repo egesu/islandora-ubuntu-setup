@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#!/bin/bash
+echo "export LC_CTYPE=en_US.UTF-8" >> ~/.bashrc
+echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
+
 DB_SERVER="localhost"
 DB_ROOT_PASSWORD="password"            # Set MySQL root password -> keep it simple -> run mysql_secure_installation after install to secure mySQL
 DRUPAL_DB_NAME="drupal7"               # Drupal database name
@@ -20,7 +22,7 @@ FEDORA_HOME="/usr/local/fedora"        # Fedora home dir
 CATALINA_HOME="$FEDORA_HOME/tomcat"    # Tomcat location
 # NOTE adjust memory so that it is no larger than half of total system memory. Depending on stack deployment this can be adjusted further. Don’t recommend running stack on system with less than 4GB of ram
 JAVA_OPTS="-Xms3072m -Xmx3072m -XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled -  Djavax.net.ssl.trustStore=/usr/local/fedora/server/truststore -Djavax.net.ssl.trustStorePassword=tomcat -Dsolr.solr.home=/usr/local/fedora/solr -Dkakadu.home=/opt/adore-djatoka/bin/Linux-x86-64 -Djava.library.path=/opt/adore-djatoka/lib/Linux-x86-64 -DLD_LIBRARY_PATH=/opt/adore-djatoka/lib/Linux-x86-64"
-JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre  
+JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 # Moved this down below java install please change to match java version
 TOMCAT_BASE="http://localhost:8080"
 ISLANDORA_BASE="$TOMCAT_BASE/fedora"
