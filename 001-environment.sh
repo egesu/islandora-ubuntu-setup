@@ -4,7 +4,7 @@ echo "export LC_CTYPE=en_US.UTF-8" >> ~/.bashrc
 echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
 
 DB_SERVER="localhost"
-DB_ROOT_PASSWORD="password"            # Set MySQL root password -> keep it simple -> run mysql_secure_installation after install to secure mySQL
+DB_ROOT_PASSWORD="123456"              # Set MySQL root password -> keep it simple -> run mysql_secure_installation after install to secure mySQL
 DRUPAL_DB_NAME="drupal7"               # Drupal database name
 DRUPAL_DB_USER="drupal"                # Drupal username for settings.php file
 DRUPAL_DB_PASS="password"              # Drupal password for settings.php file
