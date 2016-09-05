@@ -5,8 +5,11 @@ mkdir ~/islandora-setup/ffmpeg-source
 cd ~/islandora-setup/ffmpeg-source
 
 # yasm
-wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
-tar xzvf yasm-1.2.0.tar.gz && rm -rf yasm-1.2.0.tar.gz
+if [ ! -d "yasm-1.2.0" ]; then
+    wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
+    tar xzvf yasm-1.2.0.tar.gz && rm -rf yasm-1.2.0.tar.gz
+fi
+
 cd yasm-1.2.0
 ./configure
 make
@@ -14,7 +17,10 @@ checkinstall --pkgname=yasm --pkgversion="1.2.0" --backup=no --deldoc=yes --fstr
 
 # x264
 cd ~/islandora-setup/ffmpeg-source
-git clone --depth 1 git://git.videolan.org/x264.git
+if [ ! -d "x264" ]; then
+    git clone --depth 1 git://git.videolan.org/x264.git
+fi
+
 cd x264
 ./configure --enable-static --enable-shared
 make
@@ -23,7 +29,10 @@ ldconfig
 cd ~/islandora-setup/ffmpeg-source
 
 # aac
-git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
+if [ ! -d "fdk-aac" ]; then
+    git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
+fi
+
 cd fdk-aac
 autoreconf -fiv
 ./configure --disable-shared
@@ -32,7 +41,10 @@ checkinstall --pkgname=fdk-aac --pkgversion="$(date +%Y%m%d%H%M)-git" --backup=n
 
 # libvpx
 cd ~/islandora-setup/ffmpeg-source
-git clone https://chromium.googlesource.com/webm/libvpx.git
+if [ ! -d "libvpx" ]; then
+    git clone https://chromium.googlesource.com/webm/libvpx.git
+fi
+
 cd libvpx
 ./configure --disable-examples --disable-unit-tests
 make
@@ -41,7 +53,10 @@ checkinstall --pkgname=libvpx --pkgversion="1:$(date +%Y%m%d%H%M)-git" --backup=
 # opus
 
 cd ~/ffmpeg-source
-git clone --depth 1 git://git.xiph.org/opus.git
+if [ ! -d "opus" ]; then
+    git clone --depth 1 git://git.xiph.org/opus.git
+fi
+
 cd opus
 ./autogen.sh
 ./configure --disable-shared
@@ -51,8 +66,10 @@ checkinstall --pkgname=libopus --pkgversion="$(date +%Y%m%d%H%M)-git" --backup=n
 # ffmpeg
 
 cd ~/ffmpeg-source
-wget http://www.ffmpeg.org/releases/ffmpeg-1.1.1.tar.gz
-tar xf ffmpeg-1.1.1.tar.gz && rm -rf ffmpeg-1.1.1.tar.gz
+if [ ! -d "ffmpeg-1.1.1" ]; then
+    wget http://www.ffmpeg.org/releases/ffmpeg-1.1.1.tar.gz
+    tar xf ffmpeg-1.1.1.tar.gz && rm -rf ffmpeg-1.1.1.tar.gz
+fi
 cd ffmpeg-1.1.1
 
 # had to do this to remove strange characters that cause build errors
@@ -73,4 +90,4 @@ apt-mark hold ffmpeg
 
 # Cleanup ffmpeg source code
 
-ffmpeg -version && cd ~ && rm -rf ~/islandora-setup/ffmpeg-source
+ffmpeg -version && cd ~/islandora-setup # && rm -rf ~/islandora-setup/ffmpeg-source
