@@ -3,8 +3,8 @@
 apt-get -y install python-software-properties && add-apt-repository -y ppa:webupd8team/java && apt-get -y update
 
 # do not prompt for mysql password
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password 123456'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 123456'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password $DB_ROOT_PASSWORD'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password $DB_ROOT_PASSWORD'
 
 # do not prompt for agreements while installing oracle java
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
