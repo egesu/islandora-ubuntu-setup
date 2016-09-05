@@ -14,7 +14,9 @@ sed -i "s|database.username=fedoraAdmin|database.username=$FEDORA_DB_USER|g" ~/i
 
 sed -i "s|fedora.home=/usr/local/fedora|fedora.home=$FEDORA_HOME|g" ~/islandora-setup/install.properties
 
-sed -i "s|tomcat.home=/usr/local/fedora/tomcat|tomcat.home=$CATALINA_HOME|g" ~/islandora-setup/install.properties sed -i "s|fedora.admin.pass=islandora|fedora.admin.pass=$FEDORA_ADMIN_PASS|g" ~/islandora-setup/install.properties
+sed -i "s|tomcat.home=/usr/local/fedora/tomcat|tomcat.home=$CATALINA_HOME|g" ~/islandora-setup/install.properties
+
+sed -i "s|fedora.admin.pass=islandora|fedora.admin.pass=$FEDORA_ADMIN_PASS|g" ~/islandora-setup/install.properties
 
 cd ~/islandora-setup
 
