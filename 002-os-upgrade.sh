@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 locale-gen "en_US.UTF-8"
 dpkg-reconfigure locales
 

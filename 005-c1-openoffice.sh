@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 chown $APACHE_USER:$APACHE_USER echo $( getent passwd "$APACHE_USER" | cut -d: -f6 )
 cd /etc/init.d && wget --no-check-certificate https://raw.github.com/discoverygarden/openoffice-init-script/master/openoffice && chmod a+x openoffice
 usermod --shell /bin/sh $APACHE_USER

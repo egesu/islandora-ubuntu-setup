@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 apt-get -y install python-software-properties && add-apt-repository -y ppa:webupd8team/java && apt-get -y update
 
 # do not prompt for mysql password

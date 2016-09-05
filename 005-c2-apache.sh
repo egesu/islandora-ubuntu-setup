@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 # Write our apache config to sites-available
 cat apache.conf > /etc/apache2/sites-available/000-default.conf
 

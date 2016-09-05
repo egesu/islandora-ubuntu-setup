@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 DRUSH_VERSION="$(drush --version | sed -n 1p)"
 
 # Specify drush commit due to issues with newer drush versions and automated tests used by QA

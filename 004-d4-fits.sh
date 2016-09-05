@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 KDU_EXPAND_VERSION="$(kdu_expand -v)"
 KDU_COMPRESS_VERSION="$(kdu_compress -v)"
 

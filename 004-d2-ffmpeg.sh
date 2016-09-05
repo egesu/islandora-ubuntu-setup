@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+source 001-environment.sh
 
 YASM_VERSION="$(yasm --version | sed -n 1p)"
 X264_VERSION="$(x264 --version | sed -n 1p)"

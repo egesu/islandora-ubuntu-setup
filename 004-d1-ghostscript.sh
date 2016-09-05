@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source 001-environment.sh
+
 echo "Installing Ghostscript v9.05"
 
 if [ "$(gs --version)" != "9.05" ]; then
