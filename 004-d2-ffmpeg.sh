@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # ffmpeg
-mkdir ~/islandora-setup/ffmpeg-source
+if [ ! -d ffmpeg-source ]; then
+    mkdir ~/islandora-setup/ffmpeg-source
+fi
 cd ~/islandora-setup/ffmpeg-source
 
 # yasm
