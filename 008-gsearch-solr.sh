@@ -35,8 +35,7 @@ mv $CATALINA_HOME/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/Fgs
 
 cd ~/islandora-setup
 
-git clone git://github.com/discoverygarden/basic-solr-config.git
-
+# git clone git://github.com/discoverygarden/basic-solr-config.git
 # cd basic-solr-config
 # git checkout 4.x
 # mv ~/islandora-setup/basic-solr-config/conf/* $FEDORA_HOME/solr/$SOLR_DEFAULT_CORE_PATH/conf
