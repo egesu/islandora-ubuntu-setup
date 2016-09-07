@@ -4,6 +4,8 @@ source 001-environment.sh
 
 chown -R $APACHE_USER:$APACHE_USER /var/www/drupal7
 
+cd /var/www/drupal7
+
 drush -y site-install standard --account-name=$DRUPAL_ADMIN_USER --account-pass=$DRUPAL_ADMIN_PASS --db-url=mysql://$DRUPAL_DB_USER:$DRUPAL_DB_PASS@localhost/$DRUPAL_DB_NAME
 
 # Secure settings.php
