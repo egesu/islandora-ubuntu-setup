@@ -68,9 +68,9 @@ drush vset error_level $ERROR_LEVEL
 
 drush php-eval "variable_set('oai2_date_field', 'fgs_lastModifiedDate_dt')"
 
-NOTE This should be a publicly resolvable URL or viewers will not work for people who cannot resolve the name. You also should ensure that the /etc/hosts file is pointing the name at localhost
+# NOTE This should be a publicly resolvable URL or viewers will not work for people who cannot resolve the name. You also should ensure that the /etc/hosts file is pointing the name at localhost
 
-drush vset islandora_paged_content_djatoka_url "http://hostname/adore-djatoka/"
+drush vset islandora_paged_content_djatoka_url "http://10.10.10.232/adore-djatoka/"
 
 drush vset user_register 0
 
