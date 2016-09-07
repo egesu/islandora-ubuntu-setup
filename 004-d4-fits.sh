@@ -8,7 +8,7 @@ KDU_COMPRESS_VERSION="$(kdu_compress -v)"
 if [[ "$KDU_EXPAND_VERSION" != *"v6.0" || "$KDU_COMPRESS_VERSION" != *"v6.0" ]]; then
     echo "Installing fits (kdu_compress, kdu_expand)"
     cd /opt
-    wget http://fits.googlecode.com/files/fits-0.6.2.zip
+    wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/fits/fits-0.6.2.zip
     unzip -o fits-0.6.2.zip && rm -rf fits-0.6.2.zip && ln -s fits-0.6.2 fits && chmod a+x /opt/fits/fits.sh adore-djatoka
     cd /opt
     wget http://sourceforge.net/projects/djatoka/files/djatoka/1.1/adore-djatoka-1.1.tar.gz/download -O adore-djatoka-1.1.tar.gz
