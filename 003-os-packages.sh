@@ -13,6 +13,7 @@ echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | 
 echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
 apt-get -y install \
+    build-essential \
     oracle-java8-installer \
     libjpeg-dev \
     libpng12-dev \
@@ -36,6 +37,8 @@ apt-get -y install \
     php5-imagick \
     php5-mcrypt \
     php-xml* \
+    php-pear \
+    libaio1 \
     mysql-server \
     vim \
     curl \
