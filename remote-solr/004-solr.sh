@@ -11,4 +11,4 @@ echo '<?xml version="1.0" encoding="utf-8"?> \
 
 chown -R tomcat7 /usr/share/solr/example/solr
 
-service tomcat restart
+service tomcat7 restart
