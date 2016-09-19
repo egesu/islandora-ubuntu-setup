@@ -23,7 +23,7 @@ apt-get -y install \
     php5-dev \
     php5-gd \
     php5-ldap \
-    # php5-mysql \
+    php5-mysql \
     php5-xsl \
     php-apc \
     php-soap \
