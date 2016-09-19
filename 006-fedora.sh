@@ -6,7 +6,9 @@ cd ~/islandora-setup
 
 echo -e 'keystore.file=included\nri.enabled=true\nmessaging.enabled=true\napia.auth.required=false\ndatabase.jdbcDriverClass=com.mysql.jdbc.Driver\ntomcat.ssl.port=8443\nssl.available=true\ndatabase.jdbcURL=jdbc:mysql://localhost/fedora3?useUnicode\=true&characterEncoding\=UTF-8&autoReconnect\=true\nmessaging.uri=vm:(broker:(tcp://localhost:61616))\ndatabase.password=islandora\ndatabase.mysql.driver=included\ndatabase.username=fedoraAdmin\nfesl.authz.enabled=false\ntomcat.shutdown.port=8055\ndeploy.local.services=true\nxacml.enabled=true\ndatabase.mysql.jdbcDriverClass=com.mysql.jdbc.Driver\ntomcat.http.port=8080\nfedora.serverHost=localhost\ndatabase=mysql\ndatabase.driver=included\nfedora.serverContext=fedora\nllstore.type=akubra-fs\ntomcat.home=/usr/local/fedora/tomcat\nfesl.authn.enabled=true\ndatabase.mysql.jdbcURL=jdbc:mysql://localhost/fedora3?useUnicode\=true&characterEncoding\=UTF-8&autoReconnect\=true\nfedora.home=/usr/local/fedora\ninstall.type=custom\nservlet.engine=included\napim.ssl.required=false\nfedora.admin.pass=islandora\napia.ssl.required=false' > ~/islandora-setup/install.properties
 
-sed -i "s|localhost/fedora3?|localhost/$FEDORA_DB_NAME?|g" ~/islandora-setup/install.properties
+sed -i "s|localhost/fedora3?|$DB_SERVER/$FEDORA_DB_NAME?|g" ~/islandora-setup/install.properties
+
+sed -i "s|fedora.serverHost=localhost?|fedora.serverHost=$DB_SERVER?|g" ~/islandora-setup/install.properties
 
 sed -i "s|database.password=islandora|database.password=$FEDORA_DB_PASS|g" ~/islandora-setup/install.properties
 
