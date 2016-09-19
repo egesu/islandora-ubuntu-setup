@@ -5,15 +5,14 @@ source 001-environment.sh
 apt-get -y install python-software-properties && add-apt-repository -y ppa:webupd8team/java && apt-get -y update
 
 # do not prompt for mysql password
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password $DB_ROOT_PASSWORD'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password $DB_ROOT_PASSWORD'
+# debconf-set-selections <<< 'mysql-server mysql-server/root_password password $DB_ROOT_PASSWORD'
+# debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password $DB_ROOT_PASSWORD'
 
 # do not prompt for agreements while installing oracle java
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
 apt-get -y install \
-    build-essential \
     oracle-java8-installer \
     libjpeg-dev \
     libpng12-dev \
@@ -24,7 +23,7 @@ apt-get -y install \
     php5-dev \
     php5-gd \
     php5-ldap \
-    php5-mysql \
+    # php5-mysql \
     php5-xsl \
     php-apc \
     php-soap \
@@ -37,9 +36,7 @@ apt-get -y install \
     php5-imagick \
     php5-mcrypt \
     php-xml* \
-    php-pear \
-    libaio1 \
-    mysql-server \
+    # mysql-server \
     vim \
     curl \
     apache2 \
