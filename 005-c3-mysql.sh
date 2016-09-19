@@ -2,8 +2,8 @@
 
 source 001-environment.sh
 
-MYSQL=`which mysql`
-$MYSQL -uroot -p$DB_ROOT_PASSWORD -e "$SQL"
+# MYSQL=`which mysql`
+# $MYSQL -uroot -p$DB_ROOT_PASSWORD -e "$SQL"
 
 # Add a mysql backup script
 
