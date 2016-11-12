@@ -12,13 +12,13 @@ unzip -o $FEDORA_GSEARCH_NAME.zip
 
 cp $FEDORA_GSEARCH_NAME/fedoragsearch.war $CATALINA_HOME/webapps/ && unzip -o $FEDORA_GSEARCH_NAME/fedoragsearch.war -d $CATALINA_HOME/webapps/fedoragsearch && rm -rf $FEDORA_GSEARCH_NAME*
 
-# wget $SOLR_URL
-# tar -xf $SOLR_NAME.tgz
-# cp -r $SOLR_NAME/example/solr $FEDORA_HOME/solr
-# cp $SOLR_NAME/example/webapps/solr.war $CATALINA_HOME/webapps/ && unzip -o $SOLR_NAME/example/webapps/solr.war -d $CATALINA_HOME/webapps/solr
-# mkdir $FEDORA_HOME/solr/$SOLR_DEFAULT_CORE_PATH/data
+wget $SOLR_URL
+tar -xf $SOLR_NAME.tgz
+cp -r $SOLR_NAME/example/solr $FEDORA_HOME/solr
+cp $SOLR_NAME/example/webapps/solr.war $CATALINA_HOME/webapps/ && unzip -o $SOLR_NAME/example/webapps/solr.war -d $CATALINA_HOME/webapps/solr
+mkdir $FEDORA_HOME/solr/$SOLR_DEFAULT_CORE_PATH/data
 
-chown -R $FEDORA_USER:$FEDORA_USER $FEDORA_HOME
+chhown -R $FEDORA_USER:$FEDORA_USER $FEDORA_HOME
 
 cd $CATALINA_HOME/webapps/fedoragsearch/FgsConfig
 
