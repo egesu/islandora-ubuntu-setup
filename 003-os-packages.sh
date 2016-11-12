@@ -21,6 +21,7 @@ apt-get -y install \
     php5-cli \
     php5-curl \
     php5-dev \
+    php5-fpm \
     php5-gd \
     php5-ldap \
     php5-mysql \
@@ -39,7 +40,7 @@ apt-get -y install \
     mysql-server \
     vim \
     curl \
-    apache2 \
+    nginx-full \
     rsync \
     wget \
     imagemagick \
