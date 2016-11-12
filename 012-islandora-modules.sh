@@ -5,8 +5,8 @@ source 001-environment.sh
 cd /var/www/drupal7/sites/all/modules
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_scholar.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/google_analytics_reports.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_ga_reports.git
+git clone --depth 1 https://github.com/discoverygarden/google_analytics_reports.git
+git clone --depth 1 https://github.com/discoverygarden/islandora_ga_reports.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solr_search.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solr_views.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solution_pack_collection.git
@@ -31,19 +31,19 @@ git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_fits
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_simple_workflow.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_book_batch.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_batch.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_ip_embargo.git
+git clone --branch 7.x --depth 1 https://github.com/Islandora/islandora_ip_embargo.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solution_pack_compound.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solution_pack_newspaper.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_xacml_editor.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_marcxml.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_featured_collection.git
+git clone --branch 7.x --depth 1 https://github.com/discoverygarden/islandora_featured_collection.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_solr_metadata.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/solrmetadataconfigs.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_solution_pack_document.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_jodconverter.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_plupload.git
+git clone --depth 1 https://github.com/discoverygarden/solrmetadataconfigs.git
+git clone --branch 7.x --depth 1 https://github.com/discoverygarden/islandora_solution_pack_document.git
+git clone --branch 7.x --depth 1 https://github.com/discoverygarden/islandora_jodconverter.git
+git clone --branch 7.x --depth 1 https://github.com/discoverygarden/islandora_plupload.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/discoverygarden/islandora_solution_pack_entities.git
-git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora-Labs/islandora_binary_object.git
+git clone --branch 7.x --depth 1 https://github.com/Islandora-Labs/islandora_binary_object.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_checksum.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_checksum_checker.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_premis.git
