@@ -48,5 +48,6 @@ git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_chec
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_checksum_checker.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_premis.git
 git clone --branch 7.x-1.8 --depth 1 https://github.com/Islandora/islandora_bagit.git
+git clone --depth 1 https://github.com/MarcusBarnes/islandora_compound_batch.git # to batch import compound objects
 
 /usr/bin/pear install Archive_Tar
